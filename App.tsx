@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactTable from 'react-table';
+import Child from './Child';
 
 export default class App extends Component {
   constructor() {
@@ -26,20 +27,29 @@ export default class App extends Component {
           this.state.dataList.map((item, i) => {
             return (
               <table style={{ border: '1px solid black' }}>
-                <tr
-                  style={{ borderRight: '1px solid black' }}
-                  key={`${i} + index`}
-                >
-                  {`${i}  + index`}
-                  <td>{item.cloudcover}</td>
-                  <td>{item.lifted_index}</td>
-                  <td>{item.prec_type}</td>
-                  <td>{item.rh2m}</td>
-                  <td>{item.seeing}</td>
-                </tr>
+                <tbody>
+                  <tr
+                    style={{ borderRight: '1px solid black' }}
+                    key={`${i} + index`}
+                  >
+                    {`${i}  + index`}
+                    <td>{item.cloudcover}</td>
+                    <td>{item.lifted_index}</td>
+                    <td>{item.prec_type}</td>
+                    <td>{item.rh2m}</td>
+                    <td>{item.seeing}</td>
+                  </tr>
+                </tbody>
               </table>
             );
           })}
+        <Child
+          fName="Sakshi"
+          lName="Kumari"
+          city="Ranchi"
+          userState="Jharkhand"
+        />
+        <Child />
       </div>
     );
   }
